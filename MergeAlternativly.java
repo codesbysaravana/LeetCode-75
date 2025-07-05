@@ -19,3 +19,8 @@ class Solution {
         return merged.toString();
     }
 }
+
+/* 
+Question
+We are given two strings word1 and word2.
+Our task is to merge the strings by adding letters in alternating order, starting with word1. If one string is longer than the other, the additional letters must be appended to the end of the merged string. */
