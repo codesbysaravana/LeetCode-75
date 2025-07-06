@@ -1,3 +1,5 @@
+import java.util.Set;
+import java.util.HashSet;
 class Solution {
     public int secondHighest(String s) {
         // Use a Set to store unique digits
