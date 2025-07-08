@@ -19,16 +19,17 @@ class Solution {
 
         while(p1 != null || p2 != null || carry != 0) {
             //need sum for all val add
-            int x = (p1 != 0)? p1.val : 0; //selecting the val by check if not 0
-            int y = (p2 != 0)? p2.val : 0; //selecting the val by check if not 0
+            int x = (p1 != null)? p1.val : 0; //selecting the val by check if not 0
+            int y = (p2 != null)? p2.val : 0; //selecting the val by check if not 0
 
             int sum = x + y + carry;
             carry = sum/10;
 
-            current = current.next;
+            current.next = new ListNode(sum%10); // attach digit
+            current = current.next; // move to the digit we just added
 
             if (p1 != null) p1=p1.next; //traversing the next l1 pointer
-            if (p1 != null) p1=p1.next; //traversing the next l2 pointer
+            if (p2 != null) p2=p2.next; //traversing the next l2 pointer
         }
         return dummy.next;
     }
