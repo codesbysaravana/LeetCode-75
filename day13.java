@@ -39,6 +39,7 @@ The moment you see a third one even larger → you’ve got your increasing trip
 
 
 
+
 //this is the BRUTE FORCE
 /* class Solution {
     public boolean increasingTriplet(int[] nums) {
