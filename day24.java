@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Solution {
     public int pivotIndex(int[] nums) {
         int pivot = 0;       // Not really needed, but you can keep it if you want clarity
