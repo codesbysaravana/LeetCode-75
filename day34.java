@@ -11,7 +11,11 @@ class Solution {
         int bestBag = nums[0];
 
         for(int i=1; i<nums.length; i++) {
+            //if we choose to follow the subArray or do a complete new one
+            // Instead of blindly adding, choose max between extending subarray vs starting new
             current = Math.max(nums[i], current + nums[i]);
+            // Update best result
+            //Finally choose the best max of the current annd the bestBag;
             bestBag = Math.max(bestBag, current);
         }
 
