@@ -13,7 +13,7 @@ class day45 {
         //iterate from backward
         for(int i=n-1; i>=0; i--) {
             int rob = nums[i] + dp[i+2];
-            int skip = dp[i+2];
+            int skip = dp[i+1];
 
             dp[i] = Math.max(rob, skip);
         }
@@ -42,7 +42,7 @@ class day45 {
 
 /* 
 public int rob(int[] nums) {
-    int prev1 = 0; // corresponds to dp[i+1]
+    int prev1 = 0; // cor`responds to dp[i+1]
     int prev2 = 0; // corresponds to dp[i+2]
     for (int i = nums.length - 1; i >= 0; i--) {
         int curr = Math.max(nums[i] + prev2, prev1);
