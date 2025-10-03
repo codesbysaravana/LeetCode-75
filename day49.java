@@ -42,3 +42,14 @@ class day49 {
         sc.close();
     }
 }
+
+/* make set from nums
+longest = 0
+for each num in set:
+    if num-1 not in set:   // start
+        streak = 1
+        while num+1 in set:
+            num++
+            streak++
+        longest = max(longest, streak)
+return longest */
