@@ -1,33 +1,36 @@
 import java.util.*;
 
 class day50 {
-        public void setZeroes(int[][] matrix) {
-        int row = matrix.length;
-        int col = matrix[0].length;
+    public static int[][] setZeroes(int[][] matrix) {
+        int m = matrix.length;
+        int n = matrix[0].length;
 
-        if (matrix == null || row == 0 || col == 0) {
-            return; // base case: nothing to rotate
-        }
-        //for in place rev need temp;
-        int temp[][] = new int[row][col];
+        // Keep track of which rows and columns need to be zeroed
+        boolean[] rowZero = new boolean[m];
+        boolean[] colZero = new boolean[n];
 
-        for(int i=0; i<row; i++) {
-            for(int j=0; j<col; j++) {
-                if(matrix[i][j] == 0) {
-                    temp[i][j+1] = 0;
-                    temp[i][j-1] = 0;
-                    temp[i+1][j] = 0;
-                    temp[i-1][j] = 0;
+        // Step 1: Identify all 0 positions
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (matrix[i][j] == 0) {
+                    rowZero[i] = true;
+                    colZero[j] = true;
                 }
             }
         }
 
-        for(int i=0; i<row; i++) {
-            for(int j=0; j<col; j++) {
-                matrix[i][j] = temp[i][j];
+        // Step 2: Set entire row and column to 0
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (rowZero[i] || colZero[j]) {
+                    matrix[i][j] = 0;
+                }
             }
         }
+
+        return matrix;
     }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int row = sc.nextInt();
